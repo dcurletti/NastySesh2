@@ -161,11 +161,13 @@ if (Routines.find().count() === 0) {
 
 	Routines.insert({
 		userId: "1111", 
-		name: "Doug's Bulking 4 Day Split", 
-		routineType: "Bulking",
+		routineName: "Doug's Bulking 4 Day Split", 
+		fitnessType: "Bulking",
 		difficulty: "Intermediate",
-		dayType: "Numerical",
+		frequencyType: "Numerical",
+		workoutFrequency: 3,
 		public: true,
+		description: 'meowmoew',
 		workouts: [{
 			workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
 			name: "Day 1- Chest",
@@ -178,12 +180,13 @@ if (Routines.find().count() === 0) {
 	});
 	Routines.insert({
 		userId: "2222", 
-		name: "Doug's Cutting 3 Day Split", 
-		routineType: "Cutting",
+		routineName: "Doug's Cutting 3 Day Split", 
+		fitnessType: "Cutting",
 		difficulty: "Beginner",
-		dayType: "Numerical",
+		frequencyType: "Numerical",
+		workoutFrequency: 3,
 		public: true,
-		timesPerWeek: 3,
+		description: 'meowmoew',
 		workouts: [{
 			workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
 			name: "Day 1- Chest",
