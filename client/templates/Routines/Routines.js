@@ -9,14 +9,10 @@ Template.routines.events({
 			routine[field] = fieldVal;
 		})
 
-		console.log('got in here')
-
-		Routines.insert(routine, function (data) {
-			Router.go('routine', {routine_id: result});
+		Meteor.call('Routines.insert', routine, function (error, result) {
+			if (result) {
+				Router.go('routine', {routine_id: result});
+			};
 		});
-
-		// Meteor.call('Routines.insert', routine, function (error, result) {
-		// 	Router.go('routine', {routine_id: result});
-		// });
 	}
 });
