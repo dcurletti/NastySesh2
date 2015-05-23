@@ -1,9 +1,7 @@
 <template name="header">
 	<div class='nav-bar'>
-		<a href="{{pathFor 'dashboard'}}" class="nav-item">Dashboard</a>
-		<a href="{{pathFor 'routines'}}" class="nav-item">Routines</a>
-		<a href="{{pathFor 'workouts'}}" class="nav-item">Workouts</a>
-		<a href="{{pathFor 'exercises'}}" class="nav-item">Exercises</a>
-		<a href="" class="nav-item">ExerciseForm</a>
+		{{#each menuItems}}
+			<a href="{{this.url}}" class="nav-item {{selected}}">{{this.name}}</a>
+		{{/each}}
 	</div>
 </template>

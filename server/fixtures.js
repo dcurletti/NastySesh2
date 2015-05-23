@@ -2,6 +2,16 @@ if (Exercises.find().count() === 0) {
 	
 	// EXERCISES
 
+	// ExerciseLog.insert({
+	// 	userId: '1234',
+	// 	workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
+	// 	exerciseId: Exercises.findOne({name: "Bench Press"})._id,
+	// 	repsCompleted: 0,
+	// 	repsGoal: 10,
+	// 	setsCompleted: 0,
+	// 	setsGoal: 4
+	// })
+
 	Exercises.insert({
 		name: "Bench Press",
 		type: "Strength",
@@ -102,7 +112,7 @@ if (Exercises.find().count() === 0) {
 
 // WORKOUTS
 if (Workouts.find().count() < 3) {
-	for (var i = 20000; i >= 0; i--) {
+	for (var i = 1000; i >= 0; i--) {
 		Workouts.insert({
 			userId: "1111",
 			name: "Day 1- Chest",
@@ -112,12 +122,12 @@ if (Workouts.find().count() < 3) {
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 5,
 			estimatedTime: 60,
+			public: true,
 			exerciseList: [
 						Exercises.findOne({name: "Bench Press"})._id,
 						Exercises.findOne({name: "Peck Deck"})._id,
 						Exercises.findOne({name: "Dumbell Incline Bench Press"})._id 
 						]
-
 		});
 
 		Workouts.insert({
@@ -129,6 +139,7 @@ if (Workouts.find().count() < 3) {
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 3,
 			estimatedTime: 50,
+			public: true,
 			exerciseList: [
 							Exercises.findOne({name: "LAT Pulldown"})._id,
 							Exercises.findOne({name: "T-Row Pulls"})._id,
@@ -138,7 +149,12 @@ if (Workouts.find().count() < 3) {
 	};
 		
 };
+
+// WorkoutLog.insert({
+// 	userId: '1234',
 	
+// })
+
 
 
 if (Routines.find().count() === 0) {
@@ -149,6 +165,7 @@ if (Routines.find().count() === 0) {
 		routineType: "Bulking",
 		difficulty: "Intermediate",
 		dayType: "Numerical",
+		public: true,
 		workouts: [{
 			workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
 			name: "Day 1- Chest",
@@ -165,6 +182,7 @@ if (Routines.find().count() === 0) {
 		routineType: "Cutting",
 		difficulty: "Beginner",
 		dayType: "Numerical",
+		public: true,
 		timesPerWeek: 3,
 		workouts: [{
 			workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
