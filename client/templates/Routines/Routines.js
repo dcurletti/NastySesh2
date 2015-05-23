@@ -11,8 +11,12 @@ Template.routines.events({
 
 		console.log('got in here')
 
-		Meteor.call('Routines.insert', routine, function (error, result) {
-			console.log('something', result);
+		Routines.insert(routine, function (data) {
+			Router.go('routine', {routine_id: result});
 		});
+
+		// Meteor.call('Routines.insert', routine, function (error, result) {
+		// 	Router.go('routine', {routine_id: result});
+		// });
 	}
 });
