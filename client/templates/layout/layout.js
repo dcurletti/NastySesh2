@@ -30,8 +30,8 @@ var data = {
 
 
 
-Template.layout.rendered = function () {
-	var ctx = document.getElementById("myChart").getContext("2d");
-	var myLineChart = new Chart(ctx).Line(data, {response: true});
-}
+// Template.layout.rendered = function () {
+// 	var ctx = document.getElementById("myChart").getContext("2d");
+// 	var myLineChart = new Chart(ctx).Line(data, {response: true});
+// }
 
