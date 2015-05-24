@@ -1,0 +1,15 @@
+.routines-container {
+	display: flex;
+	flex-direction: column;
+
+	.routine {
+		display: flex;
+		height: 50px;
+		align-items: center;
+		border-bottom: 1px solid grey;	
+
+		span {
+			margin-left: 10px;
+		}
+	}
+}

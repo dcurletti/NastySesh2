@@ -1,0 +1,75 @@
+<template name="createRoutine">
+	<div class="routine-create-container wrapper">
+		<form role="form" class="main form" accept-charset="utf-8">
+			<div class="row">
+				<div class="large-12 columns">
+					<label class="control-label" for="routineName">Routine Name
+						<input id="routineName" name="routineName" type="text" placeholder="ie. John's 4 Day Bulking Routine">
+					</label>
+					<span class="help-block"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<label for="fitnessType">Fitness Type
+						<select id="fitnessType" name="fitnessType">
+							<option value="GeneralFitness">General Fitness</option>
+							<option value="Cardio">Cardio</option>
+							<option value="Cutting">Cutting</option>
+							<option value="Bulking">Bulking</option>
+							<option value="Strength">Strength</option>
+							<option value="SportsTraining">Sports Training</option>
+						</select>
+					</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<label for="difficulty">Difficulty
+						<select id="difficulty" name="difficulty">
+							<option value="Beginner">Beginner</option>
+							<option value="Intermediate">Intermediate</option>
+							<option value="Advanced">Advanced</option>
+						</select>
+					</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="small-6 columns">
+					<label for="frequencyType">Day Type
+						<select id="frequencyType" name="frequencyType">
+							<option value="Numerical">Numerical (ie. Day 1, Day 2, Day 3)</option>
+							<option value="DaysOfWeek">Day of Week (ie. Monday, Wednesday, Friday)</option>
+						</select>
+					</label>
+				</div>
+				<div class="small-6 columns">
+					<label for="workoutFrequency">Number of Days per Week
+						<select id="workoutFrequency" name="workoutFrequency">
+						 	<option value="" disabled selected>Number of Days per Week</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+						</select>
+					</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<label>Routine Description
+						<textarea id="description" name="description" placeholder="Enter routine details here."></textarea>
+					</label>
+				</div>
+			</div>
+			<input type="submit" value="Submit" class="button"/>
+		</form>	
+	</div>	
+</template>

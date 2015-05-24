@@ -1,1 +1,2 @@
-- Add Flex
+- Form should grab items even if they weren't touched by the user
+- Create the query parameters to filter the workouts
