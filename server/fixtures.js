@@ -112,17 +112,15 @@ if (Exercises.find().count() === 0) {
 
 // WORKOUTS
 if (Workouts.find().count() < 3) {
-	for (var i = 1000; i >= 0; i--) {
 		Workouts.insert({
 			userId: "1111",
-			name: "Day 1- Chest",
+			name: "Day 5- Chest",
 			difficulty: "Intermediate",
 			mainMuscleGroup: "Chest", //Future fun to parse most common mainMuscle
 			secondaryMuscleGroups: ["Triceps", "Shoulders"], //Fun to parse exerc
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 5,
 			estimatedTime: 60,
-			public: true,
 			exerciseList: [
 						Exercises.findOne({name: "Bench Press"})._id,
 						Exercises.findOne({name: "Peck Deck"})._id,
@@ -132,21 +130,19 @@ if (Workouts.find().count() < 3) {
 
 		Workouts.insert({
 			userId: "2222",
-			name: "Day 2- Back",
+			name: "Day 3- Back",
 			difficulty: "Intermediate",
 			mainMuscleGroup: "Back", //Future fun to parse most common mainMuscle
 			secondaryMuscleGroups: ["Triceps", "Shoulders"], //Fun to parse exerc
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 3,
 			estimatedTime: 50,
-			public: true,
 			exerciseList: [
 							Exercises.findOne({name: "LAT Pulldown"})._id,
 							Exercises.findOne({name: "T-Row Pulls"})._id,
 							Exercises.findOne({name: "Chinups"})._id
 							]
 		});
-	};
 		
 };
 
