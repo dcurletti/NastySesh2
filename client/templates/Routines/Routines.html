@@ -1,7 +1,7 @@
 <template name="routines">
 	<div class="routines-container wrapper">
 		{{#each this}}
-			<div class="routine">
+			<div class="routine" data-id={{ this._id }}>
 				<span>{{routineName}}</span>
 				<span>{{fitnessType}}</span>
 				<span>{{difficulty}}</span>

@@ -14,5 +14,12 @@ Template.routines.events({
 				Router.go('routine', {routine_id: result});
 			};
 		});
+	},
+	'mousedown .routine': function (e, tpl) {
+		$(e.currentTarget).addClass('selected')
+	},
+	'click .routine': function (e, tpl) {
+		var routineId = $(e.currentTarget).data('id')
+		Router.go('routine', {routineId: routineId})
 	}
 });

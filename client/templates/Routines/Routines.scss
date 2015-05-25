@@ -8,6 +8,10 @@
 		align-items: center;
 		border-bottom: 1px solid grey;	
 
+		&.selected {
+			background-color: rgba(255,255,255,.1);
+		}
+
 		span {
 			margin-left: 10px;
 		}
