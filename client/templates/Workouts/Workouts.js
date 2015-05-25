@@ -6,7 +6,7 @@ Template.workouts.helpers({
 
 Template.workouts.events({
 	'click .workout': function (e, tpl) {
-		var workoutId = $(e.currentTarget).data('id');
+		var workoutId = e.currentTarget.dataset.id;
 		Router.go('workout', {workoutId: workoutId});
 	}
 });
