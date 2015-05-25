@@ -19,7 +19,7 @@ Template.routines.events({
 		$(e.currentTarget).addClass('selected')
 	},
 	'click .routine': function (e, tpl) {
-		var routineId = $(e.currentTarget).data('id')
+		var routineId = e.currentTarget.dataset.id
 		Router.go('routine', {routineId: routineId})
 	}
 });

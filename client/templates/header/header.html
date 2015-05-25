@@ -1,7 +1,7 @@
 <template name="header">
 	<div class='nav-bar'>
 		{{#each menuItems}}
-			<a href="{{this.url}}" class="nav-item {{selected}}">{{this.name}}</a>
+			<a href="/{{this.url}}" class="nav-item {{selected}}">{{this.name}}</a>
 		{{/each}}
 	</div>
 </template>

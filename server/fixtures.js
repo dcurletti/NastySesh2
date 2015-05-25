@@ -13,7 +13,7 @@ if (Exercises.find().count() === 0) {
 	// })
 
 	Exercises.insert({
-		name: "Bench Press",
+		exerciseName: "Bench Press",
 		type: "Strength",
 		mainMuscleGroup: "Chest",
 		secondaryMuscleGroups: ["Triceps", "Shoulders"],
@@ -25,7 +25,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "Peck Deck",
+		exerciseName: "Peck Deck",
 		type: "Strength",
 		mainMuscleGroup: "Chest",
 		secondaryMuscleGroups: ["Triceps", "Shoulders"],
@@ -37,7 +37,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "Dumbell Incline Bench Press",
+		exerciseName: "Dumbell Incline Bench Press",
 		type: "Strength",
 		mainMuscleGroup: "Chest",
 		secondaryMuscleGroups: ["Triceps", "Shoulders"],
@@ -49,7 +49,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "LAT Pulldown",
+		exerciseName: "LAT Pulldown",
 		type: "Strength",
 		mainMuscleGroup: "Back",
 		secondaryMuscleGroups: ["Biceps", "Shoulders"],
@@ -61,7 +61,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "T-Row Pulls",
+		exerciseName: "T-Row Pulls",
 		type: "Strength",
 		mainMuscleGroup: "Back",
 		secondaryMuscleGroups: ["Biceps", "Shoulders"],
@@ -73,7 +73,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "Chinups",
+		exerciseName: "Chinups",
 		type: "Strength",
 		mainMuscleGroup: "Back",
 		secondaryMuscleGroups: ["Biceps", "Shoulders"],
@@ -85,7 +85,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "Situp",
+		exerciseName: "Situp",
 		type: "Strength",
 		mainMuscleGroup: "Core",
 		secondaryMuscleGroups: ["Core"],
@@ -97,7 +97,7 @@ if (Exercises.find().count() === 0) {
 	});
 
 	Exercises.insert({
-		name: "Squat",
+		exerciseName: "Squat",
 		type: "Strength",
 		mainMuscleGroup: "Legs",
 		secondaryMuscleGroups: ["Triceps", "Shoulders"],
@@ -114,7 +114,7 @@ if (Exercises.find().count() === 0) {
 if (Workouts.find().count() < 3) {
 		Workouts.insert({
 			userId: "1111",
-			name: "Day 5- Chest",
+			workoutName: "Day 5- Chest",
 			difficulty: "Intermediate",
 			mainMuscleGroup: "Chest", //Future fun to parse most common mainMuscle
 			secondaryMuscleGroups: ["Triceps", "Shoulders"], //Fun to parse exerc
@@ -122,15 +122,15 @@ if (Workouts.find().count() < 3) {
 			overallRating: 5,
 			estimatedTime: 60,
 			exerciseList: [
-						Exercises.findOne({name: "Bench Press"})._id,
-						Exercises.findOne({name: "Peck Deck"})._id,
-						Exercises.findOne({name: "Dumbell Incline Bench Press"})._id 
+						Exercises.findOne({exerciseName: "Bench Press"})._id,
+						Exercises.findOne({exerciseName: "Peck Deck"})._id,
+						Exercises.findOne({exerciseName: "Dumbell Incline Bench Press"})._id 
 						]
 		});
 
 		Workouts.insert({
 			userId: "2222",
-			name: "Day 3- Back",
+			workoutName: "Day 3- Back",
 			difficulty: "Intermediate",
 			mainMuscleGroup: "Back", //Future fun to parse most common mainMuscle
 			secondaryMuscleGroups: ["Triceps", "Shoulders"], //Fun to parse exerc
@@ -138,9 +138,9 @@ if (Workouts.find().count() < 3) {
 			overallRating: 3,
 			estimatedTime: 50,
 			exerciseList: [
-							Exercises.findOne({name: "LAT Pulldown"})._id,
-							Exercises.findOne({name: "T-Row Pulls"})._id,
-							Exercises.findOne({name: "Chinups"})._id
+							Exercises.findOne({exerciseName: "LAT Pulldown"})._id,
+							Exercises.findOne({exerciseName: "T-Row Pulls"})._id,
+							Exercises.findOne({exerciseName: "Chinups"})._id
 							]
 		});
 		
@@ -153,7 +153,7 @@ if (Workouts.find().count() < 3) {
 
 
 
-if (Routines.find().count() === 0) {
+if (Routines.find().count() <= 0) {
 
 	Routines.insert({
 		userId: "1111", 
@@ -165,13 +165,17 @@ if (Routines.find().count() === 0) {
 		public: true,
 		description: 'meowmoew',
 		workouts: [{
-			workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
-			name: "Day 1- Chest",
-			mainMuscleGroup: "Chest"}
+			workoutId: Workouts.findOne({workoutName: "Day 5- Chest"})._id,
+			workoutName: Workouts.findOne({workoutName: "Day 5- Chest"}).workoutName,
+			mainMuscleGroup: Workouts.findOne({workoutName: "Day 5- Chest"}).mainMuscleGroup,
+			difficulty: Workouts.findOne({workoutName: "Day 5- Chest"}).difficulty 
+		}
 		,{
-			workoutId: Workouts.findOne({name: "Day 2- Back"})._id,
-			name: "Day 2- Back",
-			mainMuscleGroup: "Back"}
+			workoutId: Workouts.findOne({workoutName: "Day 3- Back"})._id,
+			workoutName: Workouts.findOne({workoutName: "Day 3- Back"}).workoutName,
+			mainMuscleGroup: Workouts.findOne({workoutName: "Day 3- Back"}).mainMuscleGroup,
+			difficulty: Workouts.findOne({workoutName: "Day 3- Back"}).difficulty 
+		}
 		]
 	});
 	Routines.insert({
@@ -184,13 +188,17 @@ if (Routines.find().count() === 0) {
 		public: true,
 		description: 'meowmoew',
 		workouts: [{
-			workoutId: Workouts.findOne({name: "Day 1- Chest"})._id,
-			name: "Day 1- Chest",
-			mainMuscleGroup: "Chest"}
+			workoutId: Workouts.findOne({workoutName: "Day 5- Chest"})._id,
+			workoutName: Workouts.findOne({workoutName: "Day 5- Chest"}).workoutName,
+			mainMuscleGroup: Workouts.findOne({workoutName: "Day 5- Chest"}).mainMuscleGroup,
+			difficulty: Workouts.findOne({workoutName: "Day 5- Chest"}).difficulty 
+		}
 		,{
-			workoutId: Workouts.findOne({name: "Day 2- Back"})._id,
-			name: "Day 2- Back",
-			mainMuscleGroup: "Back"}
+			workoutId: Workouts.findOne({workoutName: "Day 3- Back"})._id,
+			workoutName: Workouts.findOne({workoutName: "Day 3- Back"}).workoutName,
+			mainMuscleGroup: Workouts.findOne({workoutName: "Day 3- Back"}).mainMuscleGroup,
+			difficulty: Workouts.findOne({workoutName: "Day 3- Back"}).difficulty
+		}	 
 		]
 	})
 };

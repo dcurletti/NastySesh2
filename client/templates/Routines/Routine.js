@@ -1,4 +1,7 @@
 Template.routine.helpers({
+	routineWorkouts: function () {
+		return Workouts.find();
+	}
 });
 
 Template.routine.events({

@@ -1,9 +1,9 @@
-<template name="workouts">
-	<div class="workouts-container wrapper">
+<template name="exercises">
+	<div class="exercises-container wrapper">
 		{{#each this}}
-			<div class="workout" data-id={{getId}}>
+			<div class="exercise" data-id={{ this._id }}>
 				<div>
-					<span>{{workoutName}}</span>
+					<span>{{exerciseName}}</span>
 				</div>
 				<div>
 					<span>{{mainMuscleGroup}}</span>

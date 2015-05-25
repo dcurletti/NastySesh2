@@ -2,10 +2,14 @@
 	<div class="routines-container wrapper">
 		{{#each this}}
 			<div class="routine" data-id={{ this._id }}>
-				<span>{{routineName}}</span>
-				<span>{{fitnessType}}</span>
-				<span>{{difficulty}}</span>
-				<span>{{description}}</span>
+				<div>
+					<span>{{routineName}}</span>
+				</div>
+				<div>
+					<span>{{fitnessType}}</span>
+					<span>{{difficulty}}</span>
+					<span>{{workoutFrequency}}</span>
+				</div>
 			</div>
 		{{/each}}
 	</div>

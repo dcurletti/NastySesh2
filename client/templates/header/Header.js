@@ -2,7 +2,7 @@ Template.header.helpers({
 	menuItems: function () {
 		return [
 			{ name: 'Dashboard',
-				url: '/'
+				url: ''
 			},
 			{ name: 'Routines',
 				url: 'routines'

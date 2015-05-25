@@ -1,7 +1,9 @@
 <template name="routine">
 	<div class="routine-container wrapper">
-		<h1>Routine</h1>
+		<h2>{{this.routineName}}</h2>
+
+		<button id="addWorkout">Add Workout to Routine</button>
+
+		{{> workouts this.workouts }}
 	</div>
-	<button id="addWorkout">Add Workout to Routine</button>
-	
 </template>
