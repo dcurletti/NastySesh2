@@ -1,0 +1,2 @@
+Template.exercises.created = function () {
+};

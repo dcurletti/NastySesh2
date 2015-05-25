@@ -121,11 +121,19 @@ if (Workouts.find().count() < 3) {
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 5,
 			estimatedTime: 60,
-			exerciseList: [
-						Exercises.findOne({exerciseName: "Bench Press"})._id,
-						Exercises.findOne({exerciseName: "Peck Deck"})._id,
-						Exercises.findOne({exerciseName: "Dumbell Incline Bench Press"})._id 
-						]
+			exercises: [{
+                exerciseId: Exercises.findOne({exerciseName: "Bench Press"})._id,
+                exerciseName: Exercises.findOne({exerciseName: "Bench Press"}).exerciseName,
+                mainMuscleGroup: Exercises.findOne({exerciseName: "Bench Press"}).mainMuscleGroup,
+                difficulty: Exercises.findOne({exerciseName: "Bench Press"}).difficulty
+            }
+                ,{
+                    exerciseId: Exercises.findOne({exerciseName: "Situp"})._id,
+                    exerciseName: Exercises.findOne({exerciseName: "Situp"}).exerciseName,
+                    mainMuscleGroup: Exercises.findOne({exerciseName: "Situp"}).mainMuscleGroup,
+                    difficulty: Exercises.findOne({exerciseName: "Situp"}).difficulty
+                }
+            ]
 		});
 
 		Workouts.insert({
@@ -137,11 +145,19 @@ if (Workouts.find().count() < 3) {
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 3,
 			estimatedTime: 50,
-			exerciseList: [
-							Exercises.findOne({exerciseName: "LAT Pulldown"})._id,
-							Exercises.findOne({exerciseName: "T-Row Pulls"})._id,
-							Exercises.findOne({exerciseName: "Chinups"})._id
-							]
+			exercises: [{
+                exerciseId: Exercises.findOne({exerciseName: "Bench Press"})._id,
+                exerciseName: Exercises.findOne({exerciseName: "Bench Press"}).exerciseName,
+                mainMuscleGroup: Exercises.findOne({exerciseName: "Bench Press"}).mainMuscleGroup,
+                difficulty: Exercises.findOne({exerciseName: "Bench Press"}).difficulty
+            }
+                ,{
+                    exerciseId: Exercises.findOne({exerciseName: "Situp"})._id,
+                    exerciseName: Exercises.findOne({exerciseName: "Situp"}).exerciseName,
+                    mainMuscleGroup: Exercises.findOne({exerciseName: "Situp"}).mainMuscleGroup,
+                    difficulty: Exercises.findOne({exerciseName: "Situp"}).difficulty
+                }
+            ]
 		});
 		
 };
