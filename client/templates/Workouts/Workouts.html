@@ -2,14 +2,19 @@
 	<div class="workouts-container wrapper">
 		{{#each this}}
 			<div class="workout" data-id={{getId}}>
-				<div>
-					<span>{{workoutName}}</span>
-				</div>
-				<div>
-					<span>{{mainMuscleGroup}}</span>
-					<span>{{difficulty}}</span>
-					<span>{{equipment}}</span>
-				</div>
+                <div class="workout-info">
+                    <div>
+                        <span>{{workoutName}}</span>
+                    </div>
+                    <div>
+                        <span>{{mainMuscleGroup}}</span>
+                        <span>{{difficulty}}</span>
+                        <span>{{equipment}}</span>
+                    </div>
+                </div>
+                {{#if addingToSet}}
+                    <i class="fa fa-plus"></i>
+                {{/if}}
 			</div>
 		{{/each}}
 	</div>

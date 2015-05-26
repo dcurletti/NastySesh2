@@ -1,4 +1,17 @@
 <template name="dashboard">
-	<p>Dashboard</p>
-    <a href="{{pathFor }}"></a>
+    {{> loginButtons}}
+    <div class="dashboard wrapper">
+        <h2>Dashboard</h2>
+        {{#if hasCurrentRoutine}}
+            <h3>Current Routine:</h3>
+            {{#with currentRoutine}}
+                <span>{{routineName}}</span>
+                <span>{{fitnessType}}</span>
+                <span>{{difficulty}}</span>
+            {{/with}}
+            <a href="{{pathFor 'routines' query='addToSet=currentRoutine'}}">Change current routine</a>
+        {{else}}
+            <a href="{{pathFor 'routines' query='addToSet=currentRoutine'}}">Add your current routine</a>
+        {{/if}}
+    </div>
 </template>

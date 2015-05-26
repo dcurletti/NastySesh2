@@ -21,7 +21,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Barbell", "Bench"],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 5
+		overallRating: 5,
+        description: 'exercise description'
 	});
 
 	Exercises.insert({
@@ -33,7 +34,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Barbell", "Bench"],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 3
+		overallRating: 3,
+        description: 'exercise descriptions'
 	});
 
 	Exercises.insert({
@@ -45,7 +47,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Dumbell", "Bench"],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 2
+		overallRating: 2,
+        description: 'exercise descriptions'
 	});
 
 	Exercises.insert({
@@ -57,7 +60,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Machine"],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 5
+		overallRating: 5,
+        description: 'exercise description'
 	});
 
 	Exercises.insert({
@@ -69,7 +73,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Machine"],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 5
+		overallRating: 5,
+        description: 'exercise description'
 	});
 
 	Exercises.insert({
@@ -81,7 +86,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Machine"],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 5
+		overallRating: 5,
+        description: 'exercise description'
 	});
 
 	Exercises.insert({
@@ -93,7 +99,8 @@ if (Exercises.find().count() === 0) {
 		equipment: [],
 		difficulty: "Beginner",
 		force: "Push", 
-		overallRating: 5
+		overallRating: 5,
+        description: 'exercise description'
 	});
 
 	Exercises.insert({
@@ -105,7 +112,8 @@ if (Exercises.find().count() === 0) {
 		equipment: ["Barbell", "Rack"],
 		difficulty: "Intermediate",
 		force: "Push", 
-		overallRating: 5
+		overallRating: 5,
+        description: 'exercise description'
 	});
 };
 
@@ -121,17 +129,30 @@ if (Workouts.find().count() < 3) {
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 5,
 			estimatedTime: 60,
+            description: 'workout description',
 			exercises: [{
                 exerciseId: Exercises.findOne({exerciseName: "Bench Press"})._id,
                 exerciseName: Exercises.findOne({exerciseName: "Bench Press"}).exerciseName,
                 mainMuscleGroup: Exercises.findOne({exerciseName: "Bench Press"}).mainMuscleGroup,
-                difficulty: Exercises.findOne({exerciseName: "Bench Press"}).difficulty
-            }
+                difficulty: Exercises.findOne({exerciseName: "Bench Press"}).difficulty,
+                setList: [
+                    {set: 1, reps: 12},
+                    {set: 2, reps: 10},
+                    {set: 3, reps: 8},
+                    {set: 4, reps: 6}
+                    ]
+                }
                 ,{
                     exerciseId: Exercises.findOne({exerciseName: "Situp"})._id,
                     exerciseName: Exercises.findOne({exerciseName: "Situp"}).exerciseName,
                     mainMuscleGroup: Exercises.findOne({exerciseName: "Situp"}).mainMuscleGroup,
-                    difficulty: Exercises.findOne({exerciseName: "Situp"}).difficulty
+                    difficulty: Exercises.findOne({exerciseName: "Situp"}).difficulty,
+                    setList: [
+                        {set: 1, reps: 12},
+                        {set: 2, reps: 10},
+                        {set: 3, reps: 8},
+                        {set: 4, reps: 6}
+                        ]
                 }
             ]
 		});
@@ -145,6 +166,7 @@ if (Workouts.find().count() < 3) {
 			equipment: ["Barbell", "Rack"], //Function to parse exercise equipment
 			overallRating: 3,
 			estimatedTime: 50,
+            description: 'workout description',
 			exercises: [{
                 exerciseId: Exercises.findOne({exerciseName: "Bench Press"})._id,
                 exerciseName: Exercises.findOne({exerciseName: "Bench Press"}).exerciseName,

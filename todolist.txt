@@ -1,2 +1,13 @@
 - Form should grab items even if they weren't touched by the user
-- Create the query parameters to filter the workouts
+
+## User Workout Session ##
+- A user should be able to select his current ROUTINE
+-- If a user has a current routine, then they should know what their upcoming WORKOUT is going to be and be able to start it immediately
+- A user should be able to being a WORKOUT on the fly
+-- They should be a able to choose from a list of workouts OR make their own on the fly
+
+
+- Where do we assign sets/reps to exercises
+
+
+
