@@ -1,4 +1,9 @@
 <template name="workouts">
+    {{#if addingToSet}}
+        <div class="back">
+            Back
+        </div>
+    {{/if}}
 	<div class="workouts-container wrapper">
 		{{#each this}}
 			<div class="workout" data-id={{getId}}>

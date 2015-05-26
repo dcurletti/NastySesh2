@@ -17,6 +17,9 @@ Template.workouts.events({
         var curTarget = $(e.currentTarget);
         var workoutId = curTarget.parent().data('id');
         addWorkout(workoutId)
+    },
+    'click .back': function (){
+        window.history.back();
     }
 });
 
