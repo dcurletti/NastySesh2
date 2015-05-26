@@ -2,6 +2,7 @@
     {{> loginButtons}}
     <div class="dashboard wrapper">
         <h2>Dashboard</h2>
+        <div class="currentRoutine">
         {{#if hasCurrentRoutine}}
             <h3>Current Routine:</h3>
             {{#with currentRoutine}}
@@ -13,5 +14,9 @@
         {{else}}
             <a href="{{pathFor 'routines' query='addToSet=currentRoutine'}}">Add your current routine</a>
         {{/if}}
+        </div>
+        <div>
+            <a href="{{pathFor 'routineForm'}}">Create a new Routine</a>
+        </div>
     </div>
 </template>

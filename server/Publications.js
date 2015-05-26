@@ -1,5 +1,5 @@
-Meteor.publish('userAccountInfo', function () {
-    return Meteor.users.find({}, {
+Meteor.publish('userAccountInfo', function (userId) {
+    return Meteor.users.find(userId, {
         fields: {
             emails: 1,
             profileName: 1,
